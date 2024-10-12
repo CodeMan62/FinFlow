@@ -23,7 +23,7 @@ export default function LandingPage() {
                   Manage Your Expenses with Ease
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Track, analyze, and optimize your spending habits with our
+                  Track, analyze, and optimize your sspending habits with our
                   powerful and intuitive dashboard.
                 </p>
               </div>
