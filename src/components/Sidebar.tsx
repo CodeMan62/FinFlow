@@ -23,14 +23,28 @@ export default function Sidebar() {
             <span>DashBoard</span>
           </Link>
           <Link
-            href="/folders"
+            href="/transaction"
             className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-accent"
           >
             <Folder className="h-4 w-4" />
             <span>Transaction</span>
           </Link>
           <Link
-            href="/folders"
+            href="/plan"
+            className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-accent"
+          >
+            <Folder className="h-4 w-4" />
+            <span>Plan</span>
+          </Link>
+          <Link
+            href="/advice"
+            className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-accent"
+          >
+            <Folder className="h-4 w-4" />
+            <span>Gen Advice</span>
+          </Link>
+          <Link
+            href="/help"
             className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-accent"
           >
             <HelpCircle className="h-4 w-4" />
