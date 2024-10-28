@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -9,8 +10,24 @@ import {
   LogOut,
   HelpCircle,
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { signOut, useSession } from "next-auth/react";
 
 export default function Sidebar() {
+  const session = useSession();
+
+  const handleLogout = () => {
+    signOut().then(() => {
+      window.location.href = "/";
+    });
+  };
   return (
     <div className="flex flex-col h-screen w-64 bg-background border-r">
       <div className="flex-1 overflow-auto py-2">
@@ -56,16 +73,20 @@ export default function Sidebar() {
         </div> */}
       </div>
       <div className="p-4 border-t">
-        <div className="flex items-center space-x-3 mb-2">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" alt="User" />
-            <AvatarFallback>UN</AvatarFallback>
-          </Avatar>
-          <div>
-            <p className="text-sm font-medium">User Name</p>
-            <p className="text-xs text-muted-foreground">user@example.com</p>
+        {session.data?.user?.image ? (
+          <div className="flex items-center space-x-3 mb-2">
+            <Avatar>
+              <AvatarImage src="/placeholder-user.jpg" alt="User" />
+              <AvatarFallback>{session.data?.user?.image}</AvatarFallback>
+            </Avatar>
+            <div>
+              <p className="text-sm font-medium">{session.data?.user?.name}</p>
+              <p className="text-xs text-muted-foreground">
+                {session.data.user?.email}
+              </p>
+            </div>
           </div>
-        </div>
+        ) : null}
         <div className="space-y-2">
           <Button variant="ghost" className="w-full justify-start" asChild>
             <Link href="/settings">
@@ -73,13 +94,20 @@ export default function Sidebar() {
               Settings
             </Link>
           </Button>
-          {/* <Button
-            variant="ghost"
-            className="w-full justify-start text-red-500 hover:text-red-600 hover:bg-red-100"
-          >
-            <LogOut className="mr-2 h-4 w-4" />
-            Log out
-          </Button> */}
+          {session.data?.user?.image ? (
+            <Button
+              variant="ghost"
+              className="w-full justify-start text-red-500 hover:text-red-600 hover:bg-red-100"
+              onClick={handleLogout}
+            >
+              <LogOut className="mr-2 h-4 w-4" />
+              Log out
+            </Button>
+          ) : (
+            <Link href="/login">
+              <Button className="text-sm w-full mt-3">Log In</Button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

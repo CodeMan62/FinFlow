@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center border-b bg-white">
+    <header className="relative mx-auto mt-3 bg-white shadow-lg rounded-lg px-4 lg:px-6 py-2 w-11/12 max-w-8xl h-auto flex items-center border">
       <Link className="flex items-center justify-center" href="#">
         <Wallet className="h-6 w-6 text-primary" />
         <span className="ml-2 text-2xl font-bold">ExpenseTracker</span>

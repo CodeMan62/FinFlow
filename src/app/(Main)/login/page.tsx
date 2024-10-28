@@ -61,12 +61,22 @@ export default function Login() {
             Continue with GitHub
           </Button>
         </CardContent>
-        <CardFooter className="flex flex-col space-y-4">
+        <CardFooter className="flex flex-col space-y-2">
           <div className="text-sm text-center space-y-2">
             <p>
               Don't have an account?{" "}
-              <Link href="/signup" className="text-primary hover:underline">
+              <Link
+                href="/signup"
+                className="text-primary hover:underline text-blue-500"
+              >
                 Sign up
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="/"
+                className="text-primary hover:underline text-blue-500"
+              >
+                Go back
               </Link>
             </p>
           </div>
