@@ -64,15 +64,33 @@
     @apply bg-background text-foreground;
   }
 }
-
+body {
+  overflow-x: hidden;
+}
 .grid-background {
   position: relative;
-  background-color: #f3f4f6;
+  background-color: #000000;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.05) 1px,
+      rgba(255, 255, 255, 0.05) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 30px 30px;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ca791c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff8c00;
 }
