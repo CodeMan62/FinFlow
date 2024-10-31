@@ -5,7 +5,6 @@ import React from "react";
 const Plan = () => {
   return (
     <div className="flex">
-      {<Sidebar />}
       <div className="p-4">
         <h1 className="text-3xl">Plan Your Finance</h1>
         <p className="text-gray-500">Whats your expectation?</p>

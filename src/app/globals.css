@@ -94,3 +94,81 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #ff8c00;
 }
+
+.myCard1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-color: orange;
+  box-sizing: border-box;
+  z-index: 1;
+  pointer-events: none;
+  animation: border-line 3s linear infinite;
+}
+.myCard2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-color: orange;
+  box-sizing: border-box;
+  z-index: 1;
+  pointer-events: none;
+  animation: border-line 3s linear infinite;
+  /* animation-delay: 4s; */
+}
+.myCard3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-color: orange;
+  box-sizing: border-box;
+  z-index: 1;
+  pointer-events: none;
+  animation: border-line 3s linear infinite;
+  /* animation-delay: 7s; */
+}
+
+@keyframes border-line {
+  0% {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+  50% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+}
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 30s linear infinite;
+}
+
+.animate-scroll-left:hover,
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+}

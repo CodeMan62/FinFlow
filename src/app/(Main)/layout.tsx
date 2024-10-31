@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import { SessionProvider } from "next-auth/react";
+import Sidebar from "@/components/Sidebar";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -29,10 +30,12 @@ export default function RootLayout({
     <html lang="en">
       <SessionProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
         >
-          {/* <Navbar /> */}
-          {children}
+          <div className="flex gap-2">
+            {<Sidebar />}
+            {children}
+          </div>
         </body>
       </SessionProvider>
     </html>
