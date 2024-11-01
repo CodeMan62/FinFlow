@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Expensify",
+  title: "FinFlow",
   description: "Expense Tracker",
 };
 
