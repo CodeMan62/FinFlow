@@ -16,7 +16,7 @@ import { signIn } from "next-auth/react";
 
 const Login = () => {
   const handleSignIn = async () => {
-    await signIn("google");
+    await signIn("google", { redirect: true, callbackUrl: "/dashboard" });
   };
 
   return (
@@ -29,7 +29,7 @@ const Login = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg blur-lg opacity-30 group-hover:opacity-40 transition duration-200" />
             <Wallet className="h-8 w-8 text-orange-500 mr-2" />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-orange-400">
-              ExpenseTracker
+              FinFlow
             </span>
           </div>
 

@@ -10,7 +10,7 @@ import {
   YAxis,
 } from "recharts";
 
-const DarkBarChart = () => {
+const BarChartComponent = () => {
   const data = [
     {
       name: "Page A",
@@ -100,4 +100,4 @@ const DarkBarChart = () => {
   );
 };
 
-export default DarkBarChart;
+export default BarChartComponent;

@@ -92,7 +92,7 @@ const Sidebar = () => {
           <Wallet className="h-8 w-8 text-white flex-shrink-0" />
           {!isCollapsed && (
             <span className="text-lg font-semibold text-white bg-clip-text text-transparent whitespace-nowrap">
-              ExpenseTracker
+              FinFlow
             </span>
           )}
         </div>

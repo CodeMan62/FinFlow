@@ -1,4 +1,6 @@
-import BarChart from "@/components/BarChart";
+import BarChartComponent from "@/components/Charts/BarChart";
+import LineChartComponent from "@/components/Charts/LineChart";
+import PieChartComponent from "@/components/Charts/PieChart";
 import React from "react";
 
 const Dashboard = () => {
@@ -11,7 +13,8 @@ const Dashboard = () => {
           </p>
         </div>
         <div>
-          <BarChart />
+          <LineChartComponent />
+          <BarChartComponent />
         </div>
       </section>
     </div>
