@@ -16,6 +16,11 @@ import { Inter } from "next/font/google";
 import L2 from "./L2";
 import L3 from "./L3";
 import L4 from "./L4";
+import FlickeringGrid from "../ui/flickering-grid";
+import DotPattern from "../ui/dot-pattern";
+import { cn } from "@/lib/utils";
+import ShinyButton from "../ui/shiny-button";
+import SafariSection from "./SafariSection";
 
 const inter900 = Inter({
   subsets: ["cyrillic"],
@@ -31,7 +36,13 @@ const inter600 = Inter({
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen z-[2]">
+      <DotPattern
+        cx={4}
+        cy={4}
+        cr={0.5}
+        className="absolute -z-10 inset-0 m-auto opacity-60 pointer-events-none [mask-image:radial-gradient(circle_at_center,white_0%,white_35%,transparent_70%)]"
+      />
       <motion.section
         initial={{ x: 300, y: -20 }}
         whileInView={{ x: 0 }}
@@ -69,9 +80,12 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="space-x-4">
-                <button className="text-sm bg-orange-500 border-2 border-black text-gray-100 px-4 py-2 rounded-md transition-all duration-300 ease-in-out hover:border-orange-500 hover:bg-white hover:text-zinc-800 active:scale-95 hover:shadow-md">
+                {/* <button className="text-sm bg-orange-500 border-2 border-black text-gray-100 px-4 py-2 rounded-md transition-all duration-300 ease-in-out hover:border-orange-500 hover:bg-white hover:text-zinc-800 active:scale-95 hover:shadow-md">
                   Get Started
-                </button>
+                  </button> */}
+                <ShinyButton className=" bg-orange-400 rounded-sm">
+                  Get Started
+                </ShinyButton>
                 <button className="text-sm bg-white border-2 border-black text-black px-4 py-2 rounded-md transition-all duration-300 ease-in-out hover:border-black hover:bg-gray-200 hover:text-zinc-800 active:scale-95 hover:shadow-md">
                   Learn More
                 </button>
@@ -79,6 +93,7 @@ export default function LandingPage() {
             </div>
           </div>
         </motion.section>
+        <SafariSection />
         <L2 />
         <motion.div
           initial={{ opacity: 0, y: 20 }}

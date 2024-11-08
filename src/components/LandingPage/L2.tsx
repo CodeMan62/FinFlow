@@ -5,10 +5,12 @@ import { BarChart2, PieChart, Shield } from "lucide-react";
 const L2 = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 mb-32 bg-zinc-950">
-      <div className="px-4 md:px-6">
-        <h2 className="font-mono text-3xl tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 bg-gradient-to-t from-orange-500 to-orange-300 text-transparent bg-clip-text font-bold">
-          Key Features
-        </h2>
+      <div className="px-4 md:px-6 z-[2]">
+        <div className="relative">
+          <h2 className="relative font-mono z-[6] text-3xl tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 bg-gradient-to-t from-orange-500 to-orange-300 text-transparent bg-clip-text font-bold">
+            Key Features
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
